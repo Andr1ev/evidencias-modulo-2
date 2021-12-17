@@ -1,0 +1,18 @@
+
+continuamos con las clases aplicando sentecias sql, esta vez realizando ejercicios aplicando lo aprendido en las clases anteriores
+
+
+
+select nombreLibro, ejemplares from libro where ejemplares >200 order by ejemplares asc;
+
+select nombre,apellidoP,apellidoM, cargo from empleado where departamento="Marketing" and sueldo >400000;
+
+select nombreLibro, autor, edicion from libro where autor='Stephen King' and (edicion ='5ta edicion' or edicion ='2da edicion');
+
+select nombreLibro, autor, edicion from libro where edicion ='5ta edicion' or edicion ='2da edicion' or edicion ='4ta edicion';
+
+select nombre,apellidoP,apellidoM from empleado where departamento="Contabilidad";
+
+select * from libro where autor not in ('J. K. Rowling');
+
+select * from libro where autor <> 'J. K. Rowling';

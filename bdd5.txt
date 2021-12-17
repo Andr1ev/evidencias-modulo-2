@@ -1,0 +1,44 @@
+continuamos realizando ejercicios de consultas sql, filtrando datos y uniendo distintas tablas para realizar consultas, finalizando con un ejercicio
+
+
+select nombreLibro, max(ejemplares) from libro;
+
+select avg(ejemplares) from libro where autor='Stephen King';
+
+select sum(ejemplares) as total from libro where autor='Stephen King';
+
+select nombre,apellidoP,apellidoM,cargo,departamento, max(sueldo)from empleado ;
+
+select nombre,apellidoP,apellidoM,cargo,departamento, min(sueldo)from empleado ;
+
+select count(departamento) as EmpleadosPorDepartamento from empleado group by departamento;
+
+select count(editorial) as LibrosEditoriales from libro group by editorial;
+
+select sum(ejemplares) as TotalLibros from libro;
+
+select editorial, count(editorial) as total from libro group by editorial having count(editorial);
+
+select nombreLibro,editorial, min(ejemplares) from libro group by editorial having min(ejemplares)<500;
+
+
+
+
+Ejercicio identificar entidades
+Una tienda que se dedica a la venta de videojuegos, 
+necesita llevar el control de inventario a través de un sistema 
+que utilice una base de datos. 
+El sistema debe manejar ventas realizadas e imprimir facturas
+de los proveedores para actualizar las existencias de los productos: 
+El sistema de manera mensual debe general reporte 
+sobre existencias de los productos para realizar un inventario. 
+El sistema debe manejar información global de ventas mensuales y por año, 
+y la existencia general de productos en la tienda.
+
+Inventario
+producto
+facturas
+ventas
+clientes
+proveedor
+

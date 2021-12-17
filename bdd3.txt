@@ -1,0 +1,20 @@
+clase continuando con las sentencias sql, en esta ocasion con los select, agregando filtros y limites de consultas
+
+
+select nombre from empleado where sueldo > 700000;
+select nombre, apellidoP from empleado where departamento="Soporte";
+select nombre, cargo from empleado where departamento="Marketing";
+
+select nombreLibro, ejemplares from libro where ejemplares <150 order by ejemplares asc;
+select nombreLibro, edicion from libro where autor="J. K. Rowling";
+select nombreLibro, ejemplares from libro where ejemplares <200 and editorial=" Editorial planeta" order by ejemplares desc;
+
+select * from libro order by ejemplares asc limit 10;
+
+select * from libro where id_libro in (1,5);
+
+select * from libro where id_libro between 3 and 8;
+
+select * from libro where nombreLibro like 'L%';
+
+select nombreLibro as ListaLibros from libro where nombreLibro like 'L%';

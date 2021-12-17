@@ -1,0 +1,138 @@
+clase viendo las primeras consultas a la base de datos relacionadas a la modificacion de campos (agregar, eliminar, modificar)
+
+create database videoJuegos character set utf8;
+
+use videoJuegos;
+
+create table videoJuegos(
+id_videoJuegos int auto_increment,
+nombre varchar(30),
+genero varchar(12),
+compañia varchar(20),
+descripcion text,
+fecha varchar(8),
+descuento integer,
+primary key(id_videoJuegos)
+);
+
+
+create table Genero(
+id_Genero int auto_increment,
+genero varchar(12),
+categoria varchar(12),
+
+primary key(id_Genero)
+);
+
+alter table videoJuegos add column idioma varchar(12);
+alter table videoJuegos add column valor float;
+alter table Genero add column descripcion text;
+alter table Genero add column subgenero varchar(12);
+
+alter table videoJuegos modify fecha date;
+
+alter table Genero drop categoria;
+alter table videoJuegos drop descuento;
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________
+
+
+create database Ejercicio3 character set utf8;
+
+use Ejercicio3;
+
+create table Empleado(
+id_empleado int auto_increment,
+nombre varchar(12),
+apellidoP varchar(12),
+apellidoM varchar(12),
+edad integer,
+departamento varchar(12),
+cargo varchar(12),
+sueldo integer,
+fechaIngreso date,
+primary key(id_empleado)
+);
+
+create table Libro(
+id_libro int auto_increment,
+nombreLibro varchar(30),
+autor varchar(30),
+editorial varchar(12),
+edicion varchar(12),
+añoPublicacion date,
+categoria varchar(12),
+ejemplares integer,
+primary key(id_libro)
+);
+
+alter table Empleado modify cargo varchar(20);
+
+insert into Empleado (nombre, apellidoP,apellidoM,edad,departamento,cargo,sueldo,fechaIngreso)
+values ('Andriev','Donoso','Escobar', 30,'Informatica','Desallodador',850000,'2018-04-02'),
+("Ayanna","Mcguire","Rios",57,"Contabilidad","Contador",529085,"2013-10-11 "),
+("Wilma","Cleveland","Church",39,"Soporte","Administrador",720237,"2019-05-11 "),
+("Duncan","Mejia","Clarke",53,"Marketing","Diseñador",414985,"2011-12-23"),
+('Andriev','Donoso','Escobar', 30,'Informatica','Desallodador',850000,'2018-04-02'),
+("Ayanna","Mcguire","Rios",57,"Contabilidad","Contador",529085,"2013-10-11 "),
+("Wilma","Cleveland","Church",39,"Soporte","Administrador",720237,"2019-05-11 "),
+("Duncan","Mejia","Clarke",53,"Marketing","Diseñador",414985,"2011-12-23"),
+('Andriev','Donoso','Escobar', 30,'Informatica','Desallodador',850000,'2018-04-02'),
+("Ayanna","Mcguire","Rios",57,"Contabilidad","Contador",529085,"2013-10-11 "),
+("Wilma","Cleveland","Church",39,"Soporte","Administrador",720237,"2019-05-11 "),
+("Duncan","Mejia","Clarke",53,"Marketing","Diseñador",414985,"2011-12-23"),
+('Andriev','Donoso','Escobar', 30,'Informatica','Desallodador',850000,'2018-04-02'),
+("Ayanna","Mcguire","Rios",57,"Contabilidad","Contador",529085,"2013-10-11 "),
+("Wilma","Cleveland","Church",39,"Soporte","Administrador",720237,"2019-05-11 "),
+("Duncan","Mejia","Clarke",53,"Marketing","Diseñador",414985,"2011-12-23"),
+('Andriev','Donoso','Escobar', 30,'Informatica','Desallodador',850000,'2018-04-02'),
+("Ayanna","Mcguire","Rios",57,"Contabilidad","Contador",529085,"2013-10-11 "),
+("Wilma","Cleveland","Church",39,"Soporte","Administrador",720237,"2019-05-11 "),
+("Duncan","Mejia","Clarke",53,"Marketing","Diseñador",414985,"2011-12-23");
+
+select * from Empleado;
+
+alter table libro modify añoPublicacion integer;
+alter table libro modify nombreLibro varchar(60);
+alter table libro modify editorial varchar(30);
+alter table libro modify categoria varchar(20);
+
+
+
+
+insert into libro (nombreLibro,autor,editorial,edicion,añoPublicacion,categoria,ejemplares)
+values ('Harry Potter y la piedra filosofal ','J. K. Rowling',' Bloomsbury Publishing', '3ra edicion',1997,'Narrativa Fantástica',250),
+('Harry Potter y la cámara secreta ','J. K. Rowling',' Bloomsbury Publishing', '3ra edicion',1998,'Narrativa Fantástica',250),
+('Harry Potter y el prisionero de Azkaban ','J. K. Rowling',' Bloomsbury Publishing', '3ra edicion',1999,'Narrativa Fantástica',280),
+('Harry Potter y el cáliz de fuego ','J. K. Rowling',' Bloomsbury Publishing', '3ra edicion',2000,'Narrativa Fantástica',300),
+('Harry Potter y la Orden del Fénix ','J. K. Rowling',' Bloomsbury Publishing', '2da edicion',2003,'Narrativa Fantástica',320),
+('Harry Potter y el misterio del príncipe ','J. K. Rowling',' Bloomsbury Publishing', '2da edicion',2005,'Narrativa Fantástica',350),
+('Harry Potter y las reliquias de la Muerte ','J. K. Rowling',' Bloomsbury Publishing', '2da edicion',2007,'Narrativa Fantástica',400),
+('Las Crónicas de Narnia El león, la bruja y el armario  ','C. S. Lewis',' Editorial planeta', '5ta edicion',2010,'Narrativa Fantástica',210),
+('Las Crónicas de Narnia El príncipe Caspián ','C. S. Lewis',' Editorial planeta', '5ta edicion',2010,'Narrativa Fantástica',180),
+('Las Crónicas de Narnia La travesía del viajero del alba   ','C. S. Lewis',' Editorial planeta', '4ta edicion',2010,'Narrativa Fantástica',175),
+('Las Crónicas de Narnia La silla de plata  ','C. S. Lewis',' Editorial planeta', '4ta edicion',2010,'Narrativa Fantástica',130),
+('Las Crónicas de Narnia El caballo y el muchacho  ','C. S. Lewis',' Editorial planeta', '4ta edicion',2010,'Narrativa Fantástica',120),
+('Las Crónicas de Narnia  El sobrino del mago ','C. S. Lewis',' Editorial planeta', '5ta edicion',2010,'Narrativa Fantástica',200),
+('Ángeles y demonios ','Dan Brown',' Umbriel', '5ta edicion',2000,'Novela Negra',100),
+('El código Da Vinci ','Dan Brown',' Umbriel', '5ta edicion',2003,'Novela Negra',120),
+('El símbolo perdido ','Dan Brown',' Editorial planeta', '5ta edicion',2009,'Novela Negra',120),
+('Inferno  ','Dan Brown',' Editorial planeta', '5ta edicion',2013,'Novela Negra',150),
+('Origen   ','Dan Brown',' Editorial planeta', '5ta edicion',2017,'Novela Negra',150),
+('IT   ','Stephen King',' Editorial planeta', '9na edicion',2019,'Terror',250),
+('La Niebla   ','Stephen King',' Editorial planeta', '5ta edicion',2014,'Suspenso',150),
+('La Torre Oscura   ','Stephen King',' Editorial planeta', '5ta edicion',2017,'Novela',150);
+
+select * from libro;
+

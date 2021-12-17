@@ -1,0 +1,27 @@
+primera clase de base de datos, realizando la configuracion de workbench con waamp server, vimos los conceptos basicos creando tablas con distintos tipos de datos
+
+create database pruebadb character set utf8;
+
+use pruebadb;
+
+create table primeraTabla(
+id_PrimeraT int auto_increment,
+nombre varchar(20),
+estatura float,
+fechaNacimiento date,
+descripcion text,
+primary key(id_PrimeraT)
+);
+
+alter table primeratabla add column edad integer;
+
+create table tablaMorir(
+id_PrimeraT int auto_increment,
+nombre varchar(20),
+estatura float,
+fechaNacimiento date,
+descripcion text,
+primary key(id_PrimeraT)
+);
+
+drop table if exists tablamorir;
